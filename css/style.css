@@ -39,6 +39,9 @@ header {
     header .logo img {
       height: 100%;
       width: auto; }
+    header .icons {
+      display:none;
+    }
 
 /*******************************
                 NAVIGATION
