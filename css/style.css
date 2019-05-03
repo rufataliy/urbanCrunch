@@ -226,6 +226,9 @@ section .page-3 {
     display: flex; }
     header .icons-outline {
       margin-left: 8px; }
+  nav {
+    width:50%;
+  }
   /*********  MAIN ************/
   .main-imgbox {
     display: none; }
