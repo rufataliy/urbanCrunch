@@ -1,5 +1,50 @@
+@import url("https://use.typekit.net/hql6dde.css");
+/*********************
+        Temporary
+*********************/
+i {
+  font-size: 30px; }
+
+#scroll {
+  user-select: none;
+  transition: all .5s ease-in-out;
+  order: 1; }
+
+body {
+  font-family: "proxima-nova", "Helvetica-Neue", arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0; }
+
+/*********************
+        Utilities
+*********************/
+.purple {
+  color: #7F539B; }
+
+.red {
+  color: #E73C43; }
+
+.green {
+  color: #99d4c0; }
+
 .z-minus {
   z-index: -1; }
+
+.video-box {
+  width: 30%; }
+
+.clearfix {
+  clear: both; }
+
+.right {
+  float: right;
+  width: 30%; }
+
+.left {
+  float: left;
+  width: 70%; }
 
 /*********************
     GENERAL SETTINGS
@@ -9,15 +54,26 @@
   padding: 0;
   box-sizing: border-box; }
 
+html {
+  font-size: 13px; }
+
 body {
   height: 100vh; }
 
 section {
-  height: 100%; }
+  height: 100vh; }
 
 a {
   text-decoration: none;
   color: inherit; }
+
+a:hover {
+  text-decoration: none;
+  color: inherit; }
+
+ul {
+  margin: 0;
+  list-style: none; }
 
 img {
   width: 100%; }
@@ -26,6 +82,7 @@ img {
                   HEADER
 ***************************************/
 header {
+  z-index: 1;
   position: fixed;
   width: 100%;
   background: white;
@@ -39,39 +96,45 @@ header {
     header .logo img {
       height: 100%;
       width: auto; }
-    header .icons {
-      display:none;
-    }
+  header .icons {
+    display: none; }
 
 /*******************************
                 NAVIGATION
 ********************************/
 nav {
-  position:fixed;
-  width:100%;
-  background: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  background: white;
   margin-top: 12vh;
   max-height: 0;
   overflow: hidden;
-  transition: 0.3s ease;
-  padding-right: 1rem; }
+  transition: 0.3s ease; }
 
 nav.active-nav {
-  max-height: 200px; }
+  max-height: 400px; }
 
-.nav-box {
-  height: 76vh; }
-  .nav-box-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around; }
-    .nav-box-item-link {
-      margin-top: 12px; }
+.nav-box-item {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around; }
+  .nav-box-item-link {
+    margin-top: 12px;
+    color: #A0A0A0;
+    font-size: 1.5rem; }
 
 /*********************
     MENU BUTTON
 *********************/
+.menu-btn {
+  z-index: 10;
+  height: 40px;
+  display: flex;
+  align-items: center; }
+
 .menu-btn.active .menu-btn-line {
   background: transparent; }
 
@@ -118,47 +181,92 @@ nav.active-nav {
 /**************************************
                   MAIN
 ***************************************/
-.main-content-heading {
-  margin-top: 2rem; }
-  .main-content-heading-primary {
-    font-size: 2rem; }
-  .main-content-heading-secondary {
-    font-size: 1.5rem; }
+.main {
+  display: flex;
+  align-items: center; }
+  .main-content {
+    width: 100%;
+    padding: 1rem; }
+    .main-content-heading {
+      margin-top: 1rem; }
+      .main-content-heading-primary {
+        font-size: 2rem; }
+      .main-content-heading-secondary {
+        font-size: 1.2rem;
+        color: #A0A0A0; }
+    .main-content-partners {
+      color: #A0A0A0;
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      align-self: baseline; }
+      .main-content-partners-logo {
+        width: 24%; }
 
-.main-content-partners {
-  margin-top: 3rem;
-  align-self: baseline; }
-  .main-content-partners-logo {
-    width: 24%; }
+/*************************
+            Slide
+**************************/
+.slide-wrap {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden; }
+
+.slide {
+  padding-left: 30px;
+  height: 100%;
+  width: 300%;
+  display: flex;
+  overflow: visible;
+  flex-wrap: nowrap;
+  transition: 0.7s ease; }
+
+.slide-item {
+  box-sizing: border-box;
+  width: 15%; }
+
+.btn-slide {
+  padding: 10px;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%); }
+
+.btn-slide[data="left"] {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  left: 0; }
+
+.btn-slide[data="right"] {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  right: 0; }
 
 /**************************************
                   FOOTER
 ***************************************/
 footer {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0.7) 60%, rgba(255, 255, 255, 0));
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: white;
   position: fixed;
   bottom: 0;
   height: 12vh;
   width: 100%; }
   footer .footer-box {
-    display: inline-block;
-    width: 50%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     text-align: center; }
 
 .icons {
   display: flex;
   justify-content: space-around; }
-  .icons i {
-    color: white; }
   .icons-outline {
     border-radius: 50%;
-    background-color: grey;
     padding: 6px;
-    height: 30px;
-    width: 30px;
+    height: 33px;
+    width: 33px;
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -169,28 +277,35 @@ footer {
 .download-btn {
   display: block;
   text-transform: uppercase;
-  font-size: 80%;
-  padding: 1rem;
-  background-color: yellow;
-  border-radius: 5px; }
+  font-size: 13px;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  background-color: #FCD20C;
+  border-radius: 7px; }
 
 /**************************************
             RIGHT BG SECTION
 ***************************************/
 section .page {
-  height: 100%;
+  height: 50%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
 
-section .page-1 {
-  background-image: url("../img/1.jpg"); }
+section .page-home {
+  background-image: url("../img/home.jpg"); }
 
-section .page-2 {
-  background-image: url("../img/2.jpg"); }
+section .page-about_us {
+  background-image: url("../img/about_us.jpg"); }
 
-section .page-3 {
-  background-image: url("../img/3.jpg"); }
+section .page-expertise {
+  background-image: url("../img/expertise.jpg"); }
+
+section .page-video {
+  background-image: url("../img/video.jpg"); }
+
+section .page-get_in_touch {
+  background-image: url("../img/get_in_touch.jpg"); }
 
 /**************************************
                   ANIMATION
@@ -221,7 +336,18 @@ section .page-3 {
 /**************************************
             MEDIA QUERIES
 ***************************************/
+@media screen and (max-width: 450px) {
+  section .page {
+    height: 40%; }
+  .slide-item {
+    width: 18%; } }
+
 @media screen and (min-width: 768px) {
+  html {
+    font-size: 20px; }
+  /*********  UTILITIES ************/
+  .mobile {
+    display: none; }
   /*********  HEADER ************/
   header, footer {
     width: 50%; }
@@ -230,28 +356,24 @@ section .page-3 {
     header .icons-outline {
       margin-left: 8px; }
   nav {
-    width:50%;
-  }
+    width: 50%; }
   /*********  MAIN ************/
-  .main-imgbox {
-    display: none; }
+  .main {
+    height: 100vh;
+    width: 50%;
+    float: left; }
   section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     height: 100vh; }
-  .main-content-heading {
-    text-align: center; }
+    section .page {
+      float: right;
+      width: 50%;
+      height: 100%; }
   /*********  FOOTER ************/
   footer .icons {
     display: none; }
-  footer .download {
+  .download {
     position: absolute;
-    bottom: 60%;
-    right: -25%;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2; } }
-
-.bg-right {
-  background-color: orangered;
-  height: 100%;
-  z-index: -1; }
