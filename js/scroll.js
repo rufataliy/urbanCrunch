@@ -56,12 +56,12 @@ var moveScroll = function(dir){
       actualSection = actualSection >= totalSections - 1 ? totalSections - 1 : actualSection + 1;
     }
 
-    $('#scroll').css({transform: 'translateY(-' + actualSection * $(window).height() +'px)'}, speed);
+    $('#scroll').css({transform: 'translateY(-' + actualSection * $("section").height() +'px)'}, speed);
 
 
     scrollingTimer = setTimeout(function(){
       isScrolling = false;
       clicking = false;
-    }, speed + 10);
+    }, speed+10);
   }
 }
